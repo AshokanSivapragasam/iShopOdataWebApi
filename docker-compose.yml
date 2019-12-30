@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  ishopodatawebapi:
+    image: ${DOCKER_REGISTRY-}ishopodatawebapi
+    build:
+      context: .
+      dockerfile: iShopOdataWebApi/Dockerfile

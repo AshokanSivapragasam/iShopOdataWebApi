@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iShopOdataWebApi", "iShopOdataWebApi\iShopOdataWebApi.csproj", "{9CB7E986-4A82-41B6-9D6C-EF47B87ACA77}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{06B3518B-4F6F-4640-A4E5-7AA17AD0BB94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CB7E986-4A82-41B6-9D6C-EF47B87ACA77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CB7E986-4A82-41B6-9D6C-EF47B87ACA77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CB7E986-4A82-41B6-9D6C-EF47B87ACA77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CB7E986-4A82-41B6-9D6C-EF47B87ACA77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B3518B-4F6F-4640-A4E5-7AA17AD0BB94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B3518B-4F6F-4640-A4E5-7AA17AD0BB94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B3518B-4F6F-4640-A4E5-7AA17AD0BB94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B3518B-4F6F-4640-A4E5-7AA17AD0BB94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1E70E88-EED5-4328-A156-F1895050DFED}
+	EndGlobalSection
+EndGlobal
