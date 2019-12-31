@@ -8,9 +8,9 @@ namespace iShopOdataWebApi
 {
     public class PseudoModel
     {
-        public List<DataModel> dataModels { get; set; }
+        public List<Product> products { get; set; }
     }
-    public class DataModel
+    public class Product
     {
         [JsonProperty("_id")]
         public Id Id { get; set; }

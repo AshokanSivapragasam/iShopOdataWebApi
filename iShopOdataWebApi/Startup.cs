@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using iShopOdataWebApi.Hubs;
+using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -11,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.OData.Edm;
 
 namespace iShopOdataWebApi
 {
@@ -33,9 +36,11 @@ namespace iShopOdataWebApi
                 options.AddPolicy("LocalPolicy",
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200");
+                    builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
                 });
             });
+
+            services.AddSignalR().AddAzureSignalR(Configuration.GetConnectionString("AzureSignalRConnectionString"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,7 +60,12 @@ namespace iShopOdataWebApi
             app.UseMvc(routeBuilder =>
             {
                 routeBuilder.EnableDependencyInjection();
-                routeBuilder.Select().OrderBy().Filter().Expand();
+                routeBuilder.Select().OrderBy().Filter().Expand().Count().MaxTop(100);
+            });
+
+            app.UseAzureSignalR(routes =>
+            {
+                routes.MapHub<CentralMessagingHub>("/CentralMessagingHub");
             });
         }
     }
